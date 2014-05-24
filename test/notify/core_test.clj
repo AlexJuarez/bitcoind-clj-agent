@@ -1,0 +1,7 @@
+(ns notify.core-test
+  (:require [clojure.test :refer :all]
+            [notify.core :refer :all]))
+
+(deftest a-test
+  (testing "FIXME, I fail."
+    (is (= 0 1))))
