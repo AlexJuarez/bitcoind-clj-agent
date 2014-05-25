@@ -2,8 +2,7 @@
   (:use [korma.core]
         [korma.db :only (defdb)]
         [korma.core]
-        [environ.core]
-        ))
+        [environ.core]))
 
 (def db-spec
   {:subprotocol "postgresql"
@@ -14,3 +13,9 @@
 (defdb db db-spec)
 
 (declare transactions blocks)
+
+(defentity transactions
+  (table :transaction))
+
+(defentity blocks
+  (table :block))

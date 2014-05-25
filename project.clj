@@ -8,6 +8,12 @@
    [com.taoensso/timbre "3.1.4"];;logging
    [org.clojure/java.jdbc "0.2.3"];;dependency for korma
    [korma "0.3.0-beta11"];;dbl
-   [environ "0.4.0"]
-
-   ])
+   [environ "0.4.0"]]
+  :profiles
+  {
+   :uberjar
+   {:aot :all
+    :db-user "devil"
+    :db-password "admin"}}
+  :plugins
+  [[lein-environ "0.5.0"]])
