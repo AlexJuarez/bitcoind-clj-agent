@@ -7,7 +7,10 @@
   [[org.clojure/clojure "1.6.0"]
    [com.taoensso/timbre "3.1.4"];;logging
    [postgresql/postgresql "9.1-901.jdbc4"]
+   [com.taoensso/timbre "3.1.4"];;logging
    [korma "0.3.2"];;dbl
+   [compojure "1.1.6"]
+   [http-kit "2.1.16"]
    [org.clojure/java.jdbc "0.3.3"]
    [environ "0.4.0"]]
   :profiles
