@@ -6,14 +6,15 @@
   :dependencies
   [[org.clojure/clojure "1.6.0"]
    [com.taoensso/timbre "3.1.4"];;logging
-   [org.clojure/java.jdbc "0.2.3"];;dependency for korma
-   [korma "0.3.0-beta11"];;dbl
+   [postgresql/postgresql "9.1-901.jdbc4"]
+   [korma "0.3.2"];;dbl
+   [org.clojure/java.jdbc "0.3.3"]
    [environ "0.4.0"]]
   :profiles
-  {
+  {:user
+   {:env {:db-user "warden"
+          :db-password "admin"}}
    :uberjar
-   {:aot :all
-    :db-user "devil"
-    :db-password "admin"}}
+   {:aot :all}}
   :plugins
   [[lein-environ "0.5.0"]])
