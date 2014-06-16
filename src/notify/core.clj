@@ -3,7 +3,9 @@
         [compojure.core :only [defroutes GET]]
         [korma.core]
         [taoensso.timbre :refer [trace debug info warn error fatal]]
-        [org.httpkit.server])
+        [org.httpkit.server]
+        [notify.schema])
+  (:require [notify.schema :as schema])
   (:gen-class :main true))
 
 (defn create-transaction [tx]
@@ -23,4 +25,5 @@
   (GET "/block/:id" [id] (create-block id)))
 
 (defn -main []
+  (if-not (schema/actualized?) (schema/actualize))
   (run-server all-routes {:port 8090}))
