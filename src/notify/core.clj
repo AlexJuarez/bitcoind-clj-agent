@@ -10,7 +10,9 @@
 
 (defn create-transaction [tx]
   (try
-    (insert transactions (values {:id tx}))
+    (if-not (empty? (select transactions (where {:id tx})))
+      (update transactions (set-fields {:updated_on (raw "now()")}))
+      (insert transactions (values {:id tx})))
     (catch Exception ex
       (error ex))))
 

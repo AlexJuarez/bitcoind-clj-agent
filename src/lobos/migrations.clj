@@ -7,7 +7,7 @@
   (up [] (create
           (tbl :transaction
                (boolean :processed (default false))
-               (varchar :id 64))))
+               (varchar :id 64 :unique))))
   (down [] (drop (table :transaction))))
 
 (defmigration add-blocks-table
