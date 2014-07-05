@@ -5,6 +5,7 @@
   :main notify.core
   :dependencies
   [[org.clojure/clojure "1.6.0"]
+   [com.postspectacular/rotor "0.1.0"];;logging
    [com.taoensso/timbre "3.1.4"];;logging
    [org.clojure/java.jdbc "0.2.3"];;dependency for korma
    [postgresql/postgresql "9.1-901.jdbc4"]
